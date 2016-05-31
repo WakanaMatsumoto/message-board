@@ -6,10 +6,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <style type="text/css">
+      .input-group{ margin-top:40px;}
+      .input-group,
+      .form-group{ margin-bottom:20px;}
+  </style>
+  
 </head>
 
 <body>
-  <nav class="navbar">
+  <nav class="navbar navbar-default">
     <div class="cotainer">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Message Board</a>
