@@ -1,27 +1,36 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-        メッセージ一覧
-    </div>
+  <div class="panel-heading">
+    メッセージ一覧
+  </div>
 
-    <div class="panel-body">
-        <% @messages.each do |message| %>
-            <span class="label label-info"><%= message.name %></span>
-            <%= message.body %>
-            <br>
-        <% end %>
-    </div>
+  <div class="panel-body">
+    <% @messages.each do |message| %>
+      <span class="label label-info"><%= message.name %></span>
+      <%= message.body %>
+      <br>
+    <% end %>
+  </div>
 </div>
 
-<%= form_for(@message) do |f| %>
+<%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
 
-    <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
-        <%= f.text_field :name, class:"form-control", placeholder: "名前を入力"  %>
+  <div class="form-group">
+    <label for="message_name"class="col-sm-2 control-label">名前</label>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class:"form-control", placeholder: "名前を入力"  %>
     </div>
+  </div>
 
-    <div class="form-group">
-        <%= f.text_area :body, class: "form-control", placeholder: "コメントを入力" %>
+  <div class="form-group">
+    <label for="message_name"class="col-sm-2 control-label">コメント</label>
+    <div class="col-sm-10">
+      <%= f.text_area :body, class: "form-control", placeholder: "コメントを入力" %>
     </div>
+  </div>
 
-    <%= f.submit "コメントする", class: "btn btn-primary btn-lg btn-block" %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "コメントする", class: "btn btn-primary form-control" %>
+    </div>
+  </div>
 <% end %>
